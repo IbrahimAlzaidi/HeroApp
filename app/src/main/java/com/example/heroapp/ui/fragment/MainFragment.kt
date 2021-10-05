@@ -6,8 +6,7 @@ import com.example.heroapp.databinding.FragmentMainBinding
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
 
-    override val LOG_TAG: String
-        get() = "Main Fragment"
+    override val LOG_TAG: String = "Main Fragment"
 
     override val bindingInflater: (LayoutInflater) -> FragmentMainBinding =
         FragmentMainBinding::inflate

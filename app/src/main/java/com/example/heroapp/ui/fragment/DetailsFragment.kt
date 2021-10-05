@@ -5,8 +5,7 @@ import com.example.heroapp.databinding.FragmentDetailsBinding
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
-    override val LOG_TAG: String
-        get() = "Details Fragment"
+    override val LOG_TAG: String = "Details Fragment"
 
     override val bindingInflater: (LayoutInflater) -> FragmentDetailsBinding =
         FragmentDetailsBinding::inflate
