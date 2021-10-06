@@ -1,9 +1,13 @@
-package com.example.heroapp.model.response.heroModel
+package com.example.heroapp.model.response.heroSearchResponse
 
 
+import android.annotation.SuppressLint
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class Biography(
+@SuppressLint("ParcelCreator")
+data class SuperHeroBiography(
     @SerializedName("aliases")
     val aliases: List<String>?,
     @SerializedName("alignment")
@@ -18,4 +22,8 @@ data class Biography(
     val placeOfBirth: String?,
     @SerializedName("publisher")
     val publisher: String?
-)
+) : Parcelable {
+    override fun describeContents() = 0
+    override fun writeToParcel(p0: Parcel?, p1: Int) {
+    }
+}

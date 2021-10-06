@@ -1,13 +1,13 @@
-package com.example.heroapp.model.response.heroModel
+package com.example.heroapp.model.response.heroSearchResponse
 
 
 import com.google.gson.annotations.SerializedName
 
- class Heros(
+ class SuperHeroResponse(
     @SerializedName("response")
     val response: String?,
     @SerializedName("results")
-    val results: List<Result>?,
+    val superHeroDetailResponses: List<SuperHeroDetailsResponse>?,
     @SerializedName("results-for")
     val resultsFor: String?
 )
