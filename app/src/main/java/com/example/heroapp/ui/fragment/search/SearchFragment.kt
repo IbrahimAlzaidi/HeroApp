@@ -1,8 +1,8 @@
-package com.example.heroapp.ui.fragment
+package com.example.heroapp.ui.fragment.search
 
 import android.view.LayoutInflater
 import com.example.heroapp.databinding.FragmentSearchBinding
-import com.example.heroapp.ui.base.BaseFragment
+import com.example.heroapp.ui.fragment.base.BaseFragment
 
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>() {

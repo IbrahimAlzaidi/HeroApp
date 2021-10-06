@@ -1,4 +1,4 @@
-package com.example.heroapp.ui.base
+package com.example.heroapp.ui.fragment.base
 
 import android.os.Bundle
 import android.util.Log

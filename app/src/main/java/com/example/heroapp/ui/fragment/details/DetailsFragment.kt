@@ -1,8 +1,8 @@
-package com.example.heroapp.ui.fragment
+package com.example.heroapp.ui.fragment.details
 
 import android.view.LayoutInflater
 import com.example.heroapp.databinding.FragmentDetailsBinding
-import com.example.heroapp.ui.base.BaseFragment
+import com.example.heroapp.ui.fragment.base.BaseFragment
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
