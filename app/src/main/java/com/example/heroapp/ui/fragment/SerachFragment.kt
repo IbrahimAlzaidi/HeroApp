@@ -2,9 +2,10 @@ package com.example.heroapp.ui.fragment
 
 import android.view.LayoutInflater
 import com.example.heroapp.databinding.FragmentMainBinding
+import com.example.heroapp.ui.base.BaseFragment
 
 
-class MainFragment : BaseFragment<FragmentMainBinding>() {
+class SerachFragment : BaseFragment<FragmentMainBinding>() {
 
     override val LOG_TAG: String
         get() = "Main Fragment"

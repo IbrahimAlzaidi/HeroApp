@@ -1,4 +1,4 @@
-package com.example.heroapp.ui.model.heroModel
+package com.example.heroapp.model.response.heroModel
 
 
 import com.google.gson.annotations.SerializedName
