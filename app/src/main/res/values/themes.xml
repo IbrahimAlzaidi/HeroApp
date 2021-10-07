@@ -13,4 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ImageShape" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerSize">20dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="text_color">
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
 </resources>

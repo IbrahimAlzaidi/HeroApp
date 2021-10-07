@@ -28,7 +28,7 @@ object Repository {
                     } else {
                         UrlModify.mageHeroUrl(it.data.results[0].id)
                         emit(
-                            API.makeRequestToGetHeroImage()
+                            API.makeRequestToGetHeroDetails()
                         )
                     }
                 }
