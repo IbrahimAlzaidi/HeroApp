@@ -12,15 +12,17 @@
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:padding="8dp"
-        android:inputType="text"
-        android:textSize="20dp"
-        android:hint=" search"
-        android:textColorHint="#757575"
-        android:elevation="4dp"
-        android:drawableStart="@drawable/ic_search"
+        android:layout_marginTop="16dp"
         android:background="@drawable/shape_search_bar"
+        android:drawableStart="@drawable/ic_search"
+        android:elevation="4dp"
+        android:hint=" search"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColorHint="#757575"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,6 +37,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/search_error"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_hero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/search"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_hero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:indicatorName="BallPulseSyncIndicator"
+        app:indicatorColor="#F0B81E"
+        android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
