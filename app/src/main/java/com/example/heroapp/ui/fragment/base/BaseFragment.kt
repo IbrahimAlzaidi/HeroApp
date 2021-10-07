@@ -7,17 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import kotlinx.coroutines.cancel
 
-abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, PR : BasePresenter> : Fragment() {
     abstract val LOG_TAG: String
     abstract val bindingInflater: (LayoutInflater) -> VB
-    private var _binding: ViewBinding? = null
+
+    private lateinit var _binding: ViewBinding
     var binding: VB?
         get() = _binding as VB?
         set(value) = TODO()
 
+    private lateinit var _presenter: BasePresenter
+    var presenter: PR?
+        get() = _presenter as PR?
+        set(value) = TODO()
+
+    abstract val selectedPresenter: BasePresenter
+
     abstract fun setup()
+
     abstract fun addCallBack()
+
     protected fun log(value: String) {
         Log.v(LOG_TAG, value)
     }
@@ -33,7 +44,13 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        _binding = bindingInflater(layoutInflater)
-        return _binding?.root
+        _presenter = selectedPresenter
+
+        return bindingInflater(layoutInflater).apply { _binding = this }.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter?.customScope?.cancel()
     }
 }
