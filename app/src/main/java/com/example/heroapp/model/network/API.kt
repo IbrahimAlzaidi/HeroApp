@@ -5,7 +5,6 @@ import com.example.heroapp.model.response.heroModel.Heros
 import com.example.heroapp.util.State
 import com.google.gson.Gson
 import okhttp3.FormBody
-import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
@@ -14,7 +13,7 @@ object API {
     private val gson = Gson()
     private val builder = FormBody.Builder()
 
-    fun makeRequestToGetHeroDetails(heroName:String): State<Heros> {
+    fun makeRequestToGetHeroDetails(heroName: String): State<Heros> {
         val request = Request.Builder()
             .url("https://superheroapi.com/api/2992191684367509/search/$heroName")
             .post(builder.build())
@@ -28,7 +27,7 @@ object API {
         }
     }
 
-    fun makeRequestToGetHeroImage(heroId:String?): State<HeroImage> {
+    fun makeRequestToGetHeroImage(heroId: String?): State<HeroImage> {
         val request = Request.Builder()
             .url("https://superheroapi.com/api/2992191684367509/$heroId/image")
             .post(builder.build())
