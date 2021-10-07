@@ -4,8 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     android:background="@color/white"
     tools:context=".ui.fragment.search.SearchFragment">
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="8dp"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:hint=" search"
+        android:textColorHint="#757575"
+        android:elevation="4dp"
+        android:drawableStart="@drawable/ic_search"
+        android:background="@drawable/shape_search_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_hero"
