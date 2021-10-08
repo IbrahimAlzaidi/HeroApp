@@ -1,6 +1,5 @@
 package com.example.heroapp.ui
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.heroapp.R
 import com.example.heroapp.databinding.RecyclerViewItemBinding
-import com.example.heroapp.databinding.ViewPagerItemBinding
-import com.example.heroapp.model.response.heroImageModel.HeroImage
 import com.example.heroapp.model.response.heroModel.Heros
 
 class ViewPagerAdapter(private val heroDate: Heros) :

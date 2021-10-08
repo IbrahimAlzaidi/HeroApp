@@ -12,13 +12,13 @@ object API {
     private val client = OkHttpClient()
     private val gson = Gson()
     private val builder = FormBody.Builder()
-    fun build(){
+    fun build() {
 
     }
 
-    fun makeRequestToGetHeroDetails(heroName: String): State<Heros> {
+    fun makeRequestToGetHeroDetails(): State<Heros> {
         val request = Request.Builder()
-            .url("https://superheroapi.com/api/2992191684367509/search/$heroName")
+            .url(UrlModify.getHeroUrlModify)
             .post(builder.build())
             .build()
         val response = client.newCall(request).execute()
@@ -30,9 +30,9 @@ object API {
         }
     }
 
-    fun makeRequestToGetHeroImage(heroId: String?): State<HeroImage> {
+    fun makeRequestToGetHeroImage(): State<HeroImage> {
         val request = Request.Builder()
-            .url("https://superheroapi.com/api/2992191684367509/$heroId/image")
+            .url(UrlModify.getImageHeroUrlModify)
             .post(builder.build())
             .build()
         val response = client.newCall(request).execute()
