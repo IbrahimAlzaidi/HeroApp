@@ -3,7 +3,6 @@ package com.example.heroapp.ui.fragment.search
 import android.view.LayoutInflater
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
-import androidx.viewpager2.widget.ViewPager2
 import com.example.heroapp.databinding.FragmentSearchBinding
 import com.example.heroapp.model.Repository
 import com.example.heroapp.model.response.heroImageModel.HeroImage
