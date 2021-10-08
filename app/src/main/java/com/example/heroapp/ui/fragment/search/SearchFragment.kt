@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 
 
-class SearchFragment : BaseFragment<FragmentSearchBinding,BasePresenter>() {
+class SearchFragment : BaseFragment<FragmentSearchBinding,BasePresenter>(),ISearchView {
     private val imageHeroList = mutableListOf<HeroImage>()
     override val LOG_TAG: String
         get() = "Main Fragment"
@@ -25,8 +25,19 @@ class SearchFragment : BaseFragment<FragmentSearchBinding,BasePresenter>() {
     override val bindingInflater: (LayoutInflater) -> FragmentSearchBinding =
         FragmentSearchBinding::inflate
     override val selectedPresenter = SearchPresenter()
-    override fun setup() {}
+
+    override fun setup() {
+        selectedPresenter.view = this
+        selectedPresenter.getResultOfSearch()
+    }
     override fun addCallBack() {
+//        binding?.mySearchField?.doOnTextChanged { text, _, _, _ ->
+//            if (!text.isNullOrEmpty())
+//                flowData(text.toString())
+//        }
+    }
+
+    override fun onSearchSuccess(hero: Heros) {
         binding?.mySearchField?.doOnTextChanged { text, _, _, _ ->
             if (!text.isNullOrEmpty())
                 flowData(text.toString())
