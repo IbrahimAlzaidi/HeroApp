@@ -38,6 +38,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/search_error"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:visibility="gone"
@@ -49,10 +50,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/search"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        android:visibility="visible"
         app:lottie_rawRes="@raw/search"
         app:layout_constraintBottom_toBottomOf="@+id/recycler_hero"
         app:layout_constraintEnd_toEndOf="parent"
