@@ -13,8 +13,8 @@
         app:cardCornerRadius="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/myImageHero"
         android:layout_width="150dp"
@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="@id/myCardView"
         app:layout_constraintBottom_toBottomOf="@id/myCardView"
         app:layout_constraintStart_toStartOf="@id/myCardView" />
+
     <TextView
         android:id="@+id/myHeroName"
         android:layout_width="0dp"
