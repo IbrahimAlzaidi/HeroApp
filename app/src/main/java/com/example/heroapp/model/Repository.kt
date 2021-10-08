@@ -1,6 +1,7 @@
 package com.example.heroapp.model
 
 import com.example.heroapp.model.network.API
+import com.example.heroapp.model.network.UrlModify
 import com.example.heroapp.util.State
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.flatMapConcat
@@ -25,8 +26,9 @@ object Repository {
                     if (it.data.results.isNullOrEmpty()) {
                         emit(State.Error("Data Not Found"))
                     } else {
+                        UrlModify.mageHeroUrl(it.data.results[0].id)
                         emit(
-                            API.makeRequestToGetHeroImage(it.data.results[0].id)
+                            API.makeRequestToGetHeroDetails()
                         )
                     }
                 }
@@ -36,6 +38,7 @@ object Repository {
 
     private fun getHeroDetails(heroName: String) = flow {
         emit(State.Loading)
-        emit(API.makeRequestToGetHeroDetails(heroName))
+        UrlModify.heroUrl(heroName)
+        emit(API.makeRequestToGetHeroDetails())
     }
 }

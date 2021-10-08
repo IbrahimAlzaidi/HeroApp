@@ -12,6 +12,9 @@ object API {
     private val client = OkHttpClient()
     private val gson = Gson()
     private val builder = FormBody.Builder()
+    fun build(){
+
+    }
 
     fun makeRequestToGetHeroDetails(heroName: String): State<Heros> {
         val request = Request.Builder()
