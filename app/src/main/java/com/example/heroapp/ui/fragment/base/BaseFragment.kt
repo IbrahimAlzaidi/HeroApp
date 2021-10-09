@@ -29,6 +29,10 @@ abstract class BaseFragment<VB : ViewBinding, PR : BasePresenter> : Fragment() {
 
     abstract fun addCallBack()
 
+    abstract fun View.show()
+    abstract fun View.hide()
+    abstract fun hideAllViews()
+
     protected fun log(value: String) {
         Log.v(LOG_TAG, value)
     }
@@ -53,4 +57,5 @@ abstract class BaseFragment<VB : ViewBinding, PR : BasePresenter> : Fragment() {
         super.onDestroy()
         presenter?.customScope?.cancel()
     }
+
 }

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/myCardView"
     android:layout_margin="4dp"
-    style="@style/Widget.App.CardView"
+    style="@style/ShapeAppearance.App.MediumComponent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
