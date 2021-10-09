@@ -40,15 +40,20 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
         hideAllViews()
         binding?.recyclerView?.apply {
             adapter = ViewPagerAdapter(hero)
-        }
+        }?.show()
     }
 
     override fun onSearchError(message: String) {
-        "binding?.[LottieView].show()" //here View is adding for show Lottie
+        binding?.searchError?.show()  //here View is adding for show Lottie
+        binding?.search?.hide()
+        binding?.recyclerView?.hide()
+        binding?.progressLoading?.smoothToHide()
     }
 
     override fun onSearchLoading() {
-        "binding?.progressLoading?.smoothToShow()" //here progressLoading View is adding for show progress bar
+        binding?.searchError?.hide()
+        binding?.search?.hide()
+        binding?.progressLoading?.smoothToShow() //here progressLoading View is adding for show progress bar
     }
 
     override fun View.show() {
@@ -60,9 +65,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
     }
 
     override fun hideAllViews() {
-//        binding = TODO("Equal to the View")
-//        binding = TODO("Equal to the View")
-//        binding = TODO("Equal to the View")
+        binding?.search?.hide()
+        binding?.searchError?.hide()
+        binding?.progressLoading?.smoothToHide()
     }
 
 
