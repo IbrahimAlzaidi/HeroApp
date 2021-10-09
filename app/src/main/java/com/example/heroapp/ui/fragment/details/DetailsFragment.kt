@@ -18,11 +18,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, BasePresenter>() {
     override fun setup() {}
 
     override fun addCallBack() {}
-    override fun View.show() {
-    }
-
-    override fun View.hide() {
-    }
 
     override fun hideAllViews() {
     }

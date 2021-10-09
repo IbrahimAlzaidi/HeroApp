@@ -22,7 +22,7 @@ class SearchAdapter(private val heroDate: Heros, private val listener: IItemList
         holder.binding.apply {
             heroName.text = current?.name.toString()
             Glide.with(heroImage).load(current?.image?.url.toString()).into(heroImage)
-            constraintLayout.setOnClickListener { listener.onCardClicked(current) }
+            constraintLayout.setOnClickListener { listener.onItemClickListener(current) }
         }
     }
 

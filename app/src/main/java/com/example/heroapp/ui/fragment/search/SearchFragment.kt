@@ -11,6 +11,9 @@ import com.example.heroapp.ui.fragment.base.BaseFragment
 import com.example.heroapp.ui.fragment.base.BaseInterFace
 import com.example.heroapp.ui.fragment.base.BasePresenter
 import com.example.heroapp.util.State
+import com.example.heroapp.util.goToAnotherFragment
+import com.example.heroapp.util.hide
+import com.example.heroapp.util.show
 import kotlinx.coroutines.flow.Flow
 
 class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), BaseInterFace,
@@ -37,19 +40,21 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
 
     override fun addCallBack() {}
 
-    override fun onDataFlow(hero: Flow<State<Heros>>) {
+    override fun onDataSearchFlow(hero: Flow<State<Heros>>) {
         selectedPresenter.handleRequest(hero, ::onSearchError, ::onSearchLoading, ::onSearchSuccess)
     }
 
     override fun onSearchSuccess(hero: Heros) {
         hideAllViews()
+
         binding?.recyclerView?.apply {
             adapter = SearchAdapter(hero, this@SearchFragment)
         }?.show()
     }
 
-    override fun onCardClicked(hero: Result?) {
-        Toast.makeText(requireContext(), hero?.name, Toast.LENGTH_SHORT).show()
+    override fun onItemClickListener(hero: Result?) {
+        view?.goToAnotherFragment(
+            SearchFragmentDirections.actionSearchFragmentToDetailsFragment()) // send args to details fragment
     }
 
     override fun onSearchError(message: String) {
@@ -67,14 +72,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
             search.hide()
             progressLoading.smoothToShow()
         }
-    }
-
-    override fun View.show() {
-        this.visibility = View.VISIBLE
-    }
-
-    override fun View.hide() {
-        this.visibility = View.GONE
     }
 
     override fun hideAllViews() {

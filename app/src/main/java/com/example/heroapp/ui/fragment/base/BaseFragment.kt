@@ -29,8 +29,8 @@ abstract class BaseFragment<VB : ViewBinding, PR : BasePresenter> : Fragment() {
 
     abstract fun addCallBack()
 
-    abstract fun View.show()
-    abstract fun View.hide()
+//    abstract fun View.show()
+//    abstract fun View.hide()
     abstract fun hideAllViews()
 
     protected fun log(value: String) {
