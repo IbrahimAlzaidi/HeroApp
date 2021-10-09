@@ -2,20 +2,22 @@ package com.example.heroapp.ui.fragment.search
 
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.example.heroapp.databinding.FragmentSearchBinding
 import com.example.heroapp.model.response.heroImageModel.HeroImage
 import com.example.heroapp.model.response.heroModel.Heros
-import com.example.heroapp.ui.ViewPagerAdapter
+import com.example.heroapp.model.response.heroModel.Result
 import com.example.heroapp.ui.fragment.base.BaseFragment
 import com.example.heroapp.ui.fragment.base.BaseInterFace
 import com.example.heroapp.ui.fragment.base.BasePresenter
+import com.example.heroapp.util.IItemListener
 import com.example.heroapp.util.State
 import kotlinx.coroutines.flow.Flow
 
 
 class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), BaseInterFace,
-    ISearchView {
+    ISearchView, IItemListener {
     private val imageHeroList = mutableListOf<HeroImage>()
     override val LOG_TAG: String
         get() = "Main Fragment"
@@ -39,8 +41,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
     override fun onSearchSuccess(hero: Heros) {
         hideAllViews()
         binding?.recyclerView?.apply {
-            adapter = ViewPagerAdapter(hero)
+            adapter = SearchAdapter(hero,this@SearchFragment)
         }?.show()
+    }
+
+    override fun onCardClicked(hero: Result?) {
+        Toast.makeText(requireContext(), hero?.name, Toast.LENGTH_SHORT).show()
     }
 
     override fun onSearchError(message: String) {
@@ -69,6 +75,5 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
         binding?.searchError?.hide()
         binding?.progressLoading?.smoothToHide()
     }
-
 
 }
