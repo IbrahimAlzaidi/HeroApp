@@ -8,15 +8,16 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
+import kotlin.reflect.KFunction1
 
 abstract class BasePresenter {
-    val customScope = CoroutineScope(Dispatchers.Default)
+    val customScope = CoroutineScope(Dispatchers.Main)
 
     fun <T> handleRequest(
         response: Flow<State<T>>,
         onError: (String) -> Unit,
         onLoading: () -> Unit,
-        onSuccess: (T?) -> Unit,
+        onSuccess: KFunction1<T, Unit>,
     ) {
         customScope.launch {
             response.flowOn(Dispatchers.IO)
@@ -31,7 +32,7 @@ abstract class BasePresenter {
     private fun <T> State<T>.handle(
         onError: (String) -> Unit,
         onLoading: () -> Unit,
-        onSuccess: (T?) -> Unit,
+        onSuccess: KFunction1<T, Unit>,
     ) {
         when (this) {
             is State.Error -> onError(message)
