@@ -16,6 +16,9 @@
         <entry key="..\:/HeroApp-apple-green/app/src/main/res/layout/activity_main.xml" value="0.1318181818181818" />
         <entry key="..\:/HeroApp-apple-green/app/src/main/res/layout/fragment_details.xml" value="0.20416666666666666" />
         <entry key="..\:/HeroApp-apple-green/app/src/main/res/layout/fragment_search.xml" value="0.16" />
+        <entry key="..\:/HeroApp-apple-green/app/src/main/res/layout/item_hero.xml" value="0.14027777777777778" />
+        <entry key="..\:/HeroApp-apple-green/app/src/main/res/layout/recycler_view_item_.xml" value="0.153125" />
+        <entry key="..\:/HeroApp-apple-green/app/src/main/res/layout/view_pager_item.xml" value="0.11597222222222223" />
         <entry key="..\:/HeroApp-apple-green/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20462962962962963" />
         <entry key="..\:/HeroApp-apple-green/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1125" />
       </map>
