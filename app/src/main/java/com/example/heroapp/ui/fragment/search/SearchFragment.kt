@@ -51,8 +51,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
     }
 
     override fun onItemClickListener(hero: SuperHeroResult?) {
-        view?.goToAnotherFragment(
-            SearchFragmentDirections.actionSearchFragmentToDetailsFragment()) // send args to details fragment
+        hero?.let { SearchFragmentDirections.actionSearchFragmentToDetailsFragment(it) }?.let {
+            view?.goToAnotherFragment(
+                it
+            )
+        }
     }
 
     override fun onSearchError(message: String) {
