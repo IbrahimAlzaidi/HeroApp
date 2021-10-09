@@ -3,7 +3,7 @@ package com.example.heroapp.model.response.heroModel
 
 import com.google.gson.annotations.SerializedName
 
-data class Powerstats(
+data class SuperHeroPowerstats(
     @SerializedName("combat")
     val combat: String?,
     @SerializedName("durability")

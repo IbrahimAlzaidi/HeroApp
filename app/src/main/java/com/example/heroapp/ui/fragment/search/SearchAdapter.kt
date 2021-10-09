@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.heroapp.R
 import com.example.heroapp.databinding.ItemHeroBinding
-import com.example.heroapp.model.response.heroModel.Heros
+import com.example.heroapp.model.response.heroModel.SuperHeroResponse
 
-class SearchAdapter(private val heroDate: Heros, private val listener: IItemListener) :
+class SearchAdapter(private val heroDate: SuperHeroResponse, private val listener: IItemListener) :
     RecyclerView.Adapter<SearchAdapter.ViewPagerHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerHolder =

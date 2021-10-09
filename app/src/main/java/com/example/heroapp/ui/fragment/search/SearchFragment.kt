@@ -1,12 +1,10 @@
 package com.example.heroapp.ui.fragment.search
 
 import android.view.LayoutInflater
-import android.view.View
-import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.example.heroapp.databinding.FragmentSearchBinding
-import com.example.heroapp.model.response.heroModel.Heros
-import com.example.heroapp.model.response.heroModel.Result
+import com.example.heroapp.model.response.heroModel.SuperHeroResponse
+import com.example.heroapp.model.response.heroModel.SuperHeroResult
 import com.example.heroapp.ui.fragment.base.BaseFragment
 import com.example.heroapp.ui.fragment.base.BaseInterFace
 import com.example.heroapp.ui.fragment.base.BasePresenter
@@ -40,11 +38,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
 
     override fun addCallBack() {}
 
-    override fun onDataSearchFlow(hero: Flow<State<Heros>>) {
+    override fun onDataSearchFlow(hero: Flow<State<SuperHeroResponse>>) {
         selectedPresenter.handleRequest(hero, ::onSearchError, ::onSearchLoading, ::onSearchSuccess)
     }
 
-    override fun onSearchSuccess(hero: Heros) {
+    override fun onSearchSuccess(hero: SuperHeroResponse) {
         hideAllViews()
 
         binding?.recyclerView?.apply {
@@ -52,7 +50,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
         }?.show()
     }
 
-    override fun onItemClickListener(hero: Result?) {
+    override fun onItemClickListener(hero: SuperHeroResult?) {
         view?.goToAnotherFragment(
             SearchFragmentDirections.actionSearchFragmentToDetailsFragment()) // send args to details fragment
     }

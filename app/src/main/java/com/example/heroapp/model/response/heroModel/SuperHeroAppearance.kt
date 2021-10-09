@@ -3,7 +3,7 @@ package com.example.heroapp.model.response.heroModel
 
 import com.google.gson.annotations.SerializedName
 
-data class Appearance(
+data class SuperHeroAppearance(
     @SerializedName("eye-color")
     val eyeColor: String?,
     @SerializedName("gender")
