@@ -1,36 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/myCardView"
-    android:layout_margin="4dp"
-    style="@style/ShapeAppearance.App.MediumComponent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/heroCard"
+        style="@style/ShapeAppearance.App.MediumComponent"
+        android:layout_width="360dp"
+        android:layout_height="150dp"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/hero_name"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/hero_image"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout" />
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/hero_image"
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:scaleType="fitXY"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerCut"
-            app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
-            app:layout_constraintStart_toStartOf="@id/constraintLayout"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:id="@+id/hero_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:gravity="start"
+        android:lines="1"
+        android:paddingStart="18dp"
+        android:paddingEnd="4dp"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/transition"
+        app:layout_constraintStart_toEndOf="@id/hero_image"
+        app:layout_constraintTop_toTopOf="@id/hero_image"
+        tools:text="Name Of Hero" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/hero_image"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_margin="20dp"
+        android:scaleType="fitXY"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/heroCard"
+        app:layout_constraintStart_toStartOf="@id/heroCard"
+        app:layout_constraintTop_toTopOf="@id/heroCard"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerCut" />
+
+    <TextView
+        android:id="@+id/publisherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="6dp"
+        android:paddingStart="18dp"
+        android:textColor="#75000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/hero_image"
+        app:layout_constraintTop_toBottomOf="@id/hero_name"
+        tools:hint="Publisher"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:id="@+id/transition"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/shape_image_arrow"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="@id/heroCard"
+        app:layout_constraintTop_toTopOf="@id/hero_name" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#637C7C7C"
+        android:elevation="3dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintBottom_toBottomOf="@id/transition"
+        app:layout_constraintEnd_toEndOf="@id/transition"
+        app:layout_constraintStart_toStartOf="@id/transition"
+        app:layout_constraintTop_toTopOf="@id/transition" />
+
+    <TextView
+        android:id="@+id/firstAppearance"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:clipToOutline="true"
+        android:elevation="3dp"
+        android:gravity="end"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/hero_image"
+        app:layout_constraintEnd_toEndOf="@id/transition"
+        tools:hint="in comic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

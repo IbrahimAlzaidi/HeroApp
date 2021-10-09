@@ -33,13 +33,12 @@
     </style>
 
     <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSizeBottomLeft">10dp</item>
-        <item name="cornerSizeTopRight">10dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.CornerCut" parent="">
-        <item name="cornerSizeBottomLeft">10dp</item>
-        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">30dp</item>
+        <item name="cornerFamily">rounded</item>
     </style>
 </resources>

@@ -4,37 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#27000000"
     tools:context=".ui.fragment.search.SearchFragment">
 
     <EditText
-        android:layout_margin="8dp"
         android:id="@+id/mySearchField"
-        android:layout_width="match_parent"
+        android:layout_width="370dp"
         android:layout_height="60dp"
-        tools:hint="Enter Hero Name"
-        android:textSize="24sp"
-        android:padding="8dp"
+        android:layout_margin="8dp"
         android:background="@drawable/shape_search_bar"
-        android:drawableTint="#F5A623"
-        android:lines="1"
-        android:inputType="text"
         android:drawableStart="@drawable/ic_search"
+        android:drawableTint="#F5A623"
+        android:elevation="6dp"
         android:gravity="center"
-        android:elevation="8dp"
-       app:layout_constraintTop_toTopOf="parent"
+        android:inputType="text"
+        android:lines="1"
+        android:paddingLeft="18dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:hint="Enter Hero Name" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/mySearchField"
-        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_hero"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mySearchField" />
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/search_error"
@@ -61,6 +63,7 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/search" />
+
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/progress_loading"
         android:layout_width="wrap_content"

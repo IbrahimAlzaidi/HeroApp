@@ -33,8 +33,15 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
     }
 
     private fun getInputTextAndSendToPresenter(text: String) {
-        if (!text.isNullOrEmpty())
+        if (text.isNotEmpty()) {
             selectedPresenter.getResultOfSearch(text)
+        } else {
+            binding?.apply {
+                recyclerView.hide()
+                search.show()
+            }
+        }
+
     }
 
     override fun addCallBack() {}
