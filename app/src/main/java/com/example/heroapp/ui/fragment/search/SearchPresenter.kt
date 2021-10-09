@@ -6,6 +6,6 @@ import com.example.heroapp.ui.fragment.base.BasePresenter
 class SearchPresenter(private var view: ISearchView): BasePresenter() {
 
     fun getResultOfSearch(text:String){
-        view.onDataFlow(Repository.getHeroImage(text))
+        view.onDataSearchFlow(Repository.getHeroImage(text))
     }
 }

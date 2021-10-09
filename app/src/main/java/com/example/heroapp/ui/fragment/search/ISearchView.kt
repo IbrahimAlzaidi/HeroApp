@@ -5,5 +5,5 @@ import com.example.heroapp.util.State
 import kotlinx.coroutines.flow.Flow
 
 interface ISearchView {
-    fun onDataFlow(hero : Flow<State<Heros>>)
+    fun onDataSearchFlow(hero : Flow<State<Heros>>)
 }
