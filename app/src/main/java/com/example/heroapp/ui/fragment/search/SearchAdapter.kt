@@ -8,11 +8,9 @@ import com.bumptech.glide.Glide
 import com.example.heroapp.R
 import com.example.heroapp.databinding.ItemHeroBinding
 import com.example.heroapp.model.response.heroModel.Heros
-import com.example.heroapp.util.IItemListener
 
 class SearchAdapter(private val heroDate: Heros, private val listener: IItemListener) :
     RecyclerView.Adapter<SearchAdapter.ViewPagerHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerHolder =
         ViewPagerHolder(
