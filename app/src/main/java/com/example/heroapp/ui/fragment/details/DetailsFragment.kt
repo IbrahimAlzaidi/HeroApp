@@ -31,6 +31,10 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, BasePresenter>(), I
         binding?.apply {
             heroName.text = args.details.name
             publisher.text = args.details.biography?.publisher
+            powerStats.text = args.details.powerstats?.power
+            fullName.text = "FullName : ${args.details.biography?.fullName}"
+            placeOfBirth.text = "Place Of Birth : ${args.details.biography?.placeOfBirth}"
+            firstAppearance.text = "FirstAppearance : ${args.details.biography?.firstAppearance}"
             Glide.with(this@DetailsFragment).load(args.details.image?.url).into(heroImage)
         }
     }

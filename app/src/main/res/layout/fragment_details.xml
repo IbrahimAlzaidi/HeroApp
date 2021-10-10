@@ -9,58 +9,159 @@
 
     <TextView
         android:id="@+id/heroName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_marginStart="12dp"
+        android:elevation="1dp"
+        android:gravity="center"
         android:fontFamily="@font/nunitoextrabold"
-        android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/linearImageHolder"
+        app:layout_constraintEnd_toStartOf="@id/hero_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.30"
         tools:text="Hero Name" />
 
     <TextView
         android:id="@+id/publisher"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:elevation="1dp"
+        android:layout_marginStart="12dp"
         android:fontFamily="@font/nunitoextralight"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.20"
+        app:layout_constraintEnd_toEndOf="@id/heroName"
         app:layout_constraintStart_toStartOf="@id/heroName"
         app:layout_constraintTop_toBottomOf="@id/heroName"
         tools:text="Publisher" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/heroImageHolder"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/hero_image"
         android:layout_width="180dp"
-        android:layout_height="250dp"
-        android:layout_marginHorizontal="40dp"
-        android:outlineAmbientShadowColor="@color/black"
-        android:outlineSpotShadowColor="@color/black"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="1dp"
-        app:layout_constraintVertical_bias="0.15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/publisher">
+        android:layout_height="200dp"
+        android:layout_marginRight="30dp"
+        android:elevation="6dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@id/linearImageHolder"
+        app:layout_constraintEnd_toEndOf="@id/linearImageHolder"
+        app:layout_constraintTop_toTopOf="@id/linearImageHolder"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerCut." />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/heroImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY" />
-    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/linearImageHolder"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/linear_shape"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
+        android:id="@+id/viewOne"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#363c5c"
+        app:layout_constraintEnd_toEndOf="@id/linearImageHolder"
+        app:layout_constraintTop_toBottomOf="@id/linearImageHolder" />
+
+    <View
+        android:id="@+id/viewTow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/square_shape_right"
+        app:layout_constraintEnd_toEndOf="@id/linearImageHolder"
+        app:layout_constraintTop_toBottomOf="@id/linearImageHolder" />
+
+    <View
+        android:id="@+id/viewLeftOne"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#bdc9df"
+        app:layout_constraintBottom_toBottomOf="@id/linearImageHolder"
+        app:layout_constraintStart_toStartOf="@id/linearImageHolder" />
+
+    <View
+        android:id="@+id/viewLeftTow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/square_shape_left"
+        app:layout_constraintBottom_toBottomOf="@id/linearImageHolder"
+        app:layout_constraintStart_toStartOf="@id/linearImageHolder" />
+
+    <LinearLayout
+        android:id="@+id/linearDetailsHolder"
         android:layout_width="0dp"
-        android:layout_height="350dp"
-        android:elevation="0dp"
-        android:background="@drawable/image_shape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="150dp"
+        android:background="@drawable/linera_detailes_shape"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/linearImageHolder"
+        app:layout_constraintStart_toStartOf="@id/linearImageHolder"
+        app:layout_constraintTop_toBottomOf="@id/linearImageHolder" />
+
+    <TextView
+        android:id="@+id/powerStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="95"
+        android:fontFamily="@font/nunitoextrabold"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="45sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linearDetailsHolder"
+        app:layout_constraintBottom_toBottomOf="@id/linearDetailsHolder"
+        />
+    <TextView
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunitolight"
+        app:layout_constraintStart_toStartOf="@id/powerStats"
+        app:layout_constraintTop_toBottomOf="@id/powerStats"
+        />
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="Full Name"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/powerStats"
+        app:layout_constraintTop_toBottomOf="@id/linearDetailsHolder" />
+    <TextView
+        android:id="@+id/placeOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="placeOfBirth"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunitosemibold"
+        app:layout_constraintTop_toBottomOf="@id/fullName"
+        app:layout_constraintStart_toStartOf="@id/fullName"
+        app:layout_constraintEnd_toEndOf="@id/fullName"
+        />
+    <TextView
+        android:id="@+id/firstAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="firstAppearance"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunitosemibold"
+        app:layout_constraintTop_toBottomOf="@id/placeOfBirth"
+        app:layout_constraintStart_toStartOf="@id/fullName"
+        app:layout_constraintEnd_toEndOf="@id/fullName"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
