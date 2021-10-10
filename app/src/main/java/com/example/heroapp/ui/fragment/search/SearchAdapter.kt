@@ -33,7 +33,7 @@ class SearchAdapter(private val heroDate: SuperHeroResponse, private val listene
         AnimationUtils.loadAnimation(holder.itemView.context, android.R.anim.slide_in_left)
 
 
-    override fun getItemCount() = heroDate.results!!.size
+    override fun getItemCount()= heroDate.results!!.size
 
     inner class RecyclerViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = ItemHeroBinding.bind(itemView)

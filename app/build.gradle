@@ -67,4 +67,10 @@ dependencies {
 
     //client and request dependency
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+    //power status chart dependency
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
+    api 'tk.zielony:carbon:0.16.0.1'
+
 }

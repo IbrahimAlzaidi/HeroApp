@@ -17,7 +17,7 @@ abstract class BasePresenter {
         response: Flow<State<T>>,
         onError: (String) -> Unit,
         onLoading: () -> Unit,
-        onSuccess: KFunction1<T, Unit>,
+        onSuccess: KFunction1<T, Unit>?,
     ) {
         customScope.launch {
             response.flowOn(Dispatchers.IO)
@@ -32,12 +32,14 @@ abstract class BasePresenter {
     private fun <T> State<T>.handle(
         onError: (String) -> Unit,
         onLoading: () -> Unit,
-        onSuccess: KFunction1<T, Unit>,
+        onSuccess: KFunction1<T, Unit>?,
     ) {
         when (this) {
             is State.Error -> onError(message)
             State.Loading -> onLoading()
-            is State.Success -> onSuccess(data)
+            is State.Success -> if (onSuccess != null) {
+                onSuccess(data)
+            }
         }
     }
 }

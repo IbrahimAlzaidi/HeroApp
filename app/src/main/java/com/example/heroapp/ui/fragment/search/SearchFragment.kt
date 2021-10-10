@@ -28,12 +28,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
 
     override fun setup() {
         binding?.mySearchField?.doOnTextChanged { text, _, _, _ ->
-            getInputTextAndSendToPresenter(text.toString())
+            getInputTextAndSendToPresenter(text?.trim().toString())
         }
     }
 
     private fun getInputTextAndSendToPresenter(text: String) {
-        if (text.isNotEmpty()) {
+        if (!text.isNullOrEmpty()) {
             selectedPresenter.getResultOfSearch(text)
         } else {
             binding?.apply {
