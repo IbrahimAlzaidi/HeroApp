@@ -28,7 +28,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
 
     override fun setup() {
         binding?.mySearchField?.doOnTextChanged { text, _, _, _ ->
-            getInputTextAndSendToPresenter(text?.trim().toString())
+            getInputTextAndSendToPresenter(text.toString())
         }
     }
 

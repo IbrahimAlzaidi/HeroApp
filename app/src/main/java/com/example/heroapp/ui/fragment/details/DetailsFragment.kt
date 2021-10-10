@@ -32,7 +32,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, BasePresenter>(), I
             heroName.text = args.details.name
             publisher.text = args.details.biography?.publisher
             Glide.with(this@DetailsFragment).load(args.details.image?.url).into(heroImage)
-            heroPower(args.details.powerstats)
         }
     }
 
@@ -62,7 +61,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding, BasePresenter>(), I
             title("Hero Power stats")
             title().fontColor(ContextCompat.getColor(requireContext(), R.color.dark_blue).toString())
         }
-//        binding?.powerStatsChart?.setChart(pie)
     }
 
 
