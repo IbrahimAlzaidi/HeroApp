@@ -24,18 +24,12 @@ abstract class BaseFragment<VB : ViewBinding, PR : BasePresenter> : Fragment() {
         set(value) = TODO()
 
     abstract val selectedPresenter: BasePresenter
-
     abstract fun setup()
-
     abstract fun addCallBack()
-
-//    abstract fun View.show()
-//    abstract fun View.hide()
     abstract fun hideAllViews()
 
-    protected fun log(value: String) {
-        Log.v(LOG_TAG, value)
-    }
+    protected fun log(value: String) = Log.v(LOG_TAG, value)
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

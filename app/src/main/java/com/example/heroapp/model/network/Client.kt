@@ -4,10 +4,8 @@ import com.example.heroapp.model.response.heroImageModel.SuperHeroImageResponse
 import com.example.heroapp.model.response.heroModel.SuperHeroResponse
 import com.example.heroapp.util.State
 import com.google.gson.Gson
-import okhttp3.FormBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.Response
 
 object Client : IClient {
     private val client = OkHttpClient()

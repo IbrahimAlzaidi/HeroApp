@@ -12,7 +12,6 @@ import com.example.heroapp.util.State
 import com.example.heroapp.util.goToAnotherFragment
 import com.example.heroapp.util.hide
 import com.example.heroapp.util.show
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 
 class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), BaseInterFace,
@@ -41,7 +40,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, BasePresenter>(), Bas
                 search.show()
             }
         }
-
     }
 
     override fun addCallBack() {}

@@ -2,7 +2,6 @@ package com.example.heroapp.util
 
 import android.view.View
 import androidx.navigation.NavDirections
-import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 
 fun View.show() {

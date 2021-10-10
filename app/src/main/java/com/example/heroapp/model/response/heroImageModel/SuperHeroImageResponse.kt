@@ -14,7 +14,7 @@ data class SuperHeroImageResponse(
     @SerializedName("response")
     val response: String?,
     @SerializedName("url")
-    val url: String?
+    val url: String?,
 ) : Parcelable {
     override fun describeContents(): Int {
         TODO("Not yet implemented")
